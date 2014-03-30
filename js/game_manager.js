@@ -17,11 +17,11 @@ function GameManager(size, InputManager, Actuator) {
   this.inputManager.on('run', function() {
     if (this.running) {
       this.running = false;
-      this.actuator.setRunButton('Auto-run');
+      this.actuator.setRunButton('Start AI');
     } else {
       this.running = true;
       this.run()
-      this.actuator.setRunButton('Stop');
+      this.actuator.setRunButton('Stop AI');
     }
   }.bind(this));
 
@@ -32,7 +32,7 @@ function GameManager(size, InputManager, Actuator) {
 GameManager.prototype.restart = function () {
   this.actuator.restart();
   this.running = false;
-  this.actuator.setRunButton('Auto-run');
+  this.actuator.setRunButton('Start AI');
   this.setup();
 };
 
